@@ -1,6 +1,8 @@
-var PLAY = 1;
+var SERVE = 1;
+var PLAY = 2;
 var END = 0;
-var gameState = 1;
+var gameState = 2;
+
 var canvas;
 var pirate, nonPirate;
 var coin, bomb;
@@ -25,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-  canvas = createCanvas(1000, 700);
+  canvas = createCanvas(windowWidth, windowHeight);
 
   security = new Security();
   system = new System();
@@ -48,6 +50,13 @@ function setup() {
 function draw() {
 
   background("lightblue");
+
+  if(gameState === SERVE){
+    clues();
+    security.display();
+    textSize(20);
+    fill("white");
+  }
 
   if (gameState === PLAY) {
 
@@ -82,18 +91,8 @@ function draw() {
       coinGroup.destroyEach();
 
 
-      score = score + 5;
+      score = score + 5
 
-      if(pirate.isTouching(coin1_img)){
-        clues();
-        security.display();
-        textSize(20);
-        fill("white");
-      
-        pirate.visible = false;
-        coinsGroup.visible = false;
-        bombsGroup.visible = false;
-      
         if(score === 3){
           pirate.visible = true;
           coinsGroup.visible = true;
@@ -102,7 +101,7 @@ function draw() {
           clues.visible = false;
         security.visible = false;
         }
-          }
+          
 
       if(score === 50){
         gameState = END;

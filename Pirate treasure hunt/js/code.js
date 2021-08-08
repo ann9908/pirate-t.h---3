@@ -4,22 +4,22 @@ const accessCode3 = "BLACKBOARD";
 
 function clues() {
     
-    fill("white")
+    fill("black")
     textSize(15)
     text("Y E H O K C", 100,50)
-    fill("lightblue")
+    fill("blue")
     text("Name the Sport", 100,70)
 
-fill("white")
+fill("black")
     textSize(15)
     text(" _RAIN", 700,170)
-    fill("lightblue")
+    fill("blue")
     text("Hint: we go to far off places in it", 700,185)
 
-    fill("white")
+    fill("black")
     textSize(15)
     text("D R A O B B L A C K", 70,180)
-    fill("lightblue")
+    fill("blue")
     text(" what is black when clean & white when dirty?", 70,195)
 
 }
